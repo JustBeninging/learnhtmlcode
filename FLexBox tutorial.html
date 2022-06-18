@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            /* flex-direction helps determine main and cross axis; here, row(Horizontal) is main axis column(vertical) is cross axis.  */
+            border: 2px solid blue;
+            min-height: 45vh;
+            justify-content: center;
+            /* justify content works on main axis */
+            align-items: center;
+            /* align-items works on cross axis */
+            flex-wrap: wrap;
+            /* flex-wrap helps make website respsonsive */
+
+        }
+
+        .flex-item {
+            box-sizing: border-box;
+            border: 2px solid black;
+            margin: 13px;
+            background-color: aquamarine;
+            width: 122px;
+            height: 122px;
+            padding-top: 51px;
+            text-align: center;
+        }
+
+        /* individual item in flexbox */
+        .item-1 {
+            order: 2;
+            /* order and flex-grow is similar to z index     */
+            flex-grow: 2;
+            /* flex-grow increases size in main axis i.e. here width will increase */
+            align-self:flex-start;
+            /* align-self overwrites the align-item for the individual element */
+        }
+
+        .item-3 {
+            order: 5;
+            flex-grow: 4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div class="flex-item item-1">1</div>
+        <div class="flex-item item-2">2</div>
+        <div class="flex-item item-3">3</div>
+        <div class="flex-item item-4">4</div>
+    </div>
+</body>
+
+</html>
